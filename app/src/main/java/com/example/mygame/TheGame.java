@@ -1,7 +1,5 @@
 package com.example.mygame;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Point;
@@ -13,7 +11,6 @@ import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -25,10 +22,8 @@ public class TheGame extends AppCompatActivity {
     final int THREAD_SLEEP_TIME=20;
     private Vibrator v;
     private RelativeLayout layout;
-    private GridLayout layoutBalls;
     private MediaPlayer ring;
-    private ImageView player;
-    private ImageView mute;
+    private ImageView player, mute;
     private TextView score = null;
     private ImageView[] balls;
     private volatile boolean playing = true;
@@ -36,7 +31,6 @@ public class TheGame extends AppCompatActivity {
     private double points = 0;
     private int countCollision=0;
     Random rand = new Random();
-
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -74,7 +68,6 @@ public class TheGame extends AppCompatActivity {
 
     public void initGame(){
         this.layout = findViewById(R.id.big_layout);
-      //  this.layoutBalls = findViewById(R.id.layout_for_balls);
         this.score = findViewById(R.id.scoreText);
         this.player = findViewById(R.id.playerView);
         this.mute = findViewById(R.id.music_off);
@@ -155,40 +148,23 @@ public class TheGame extends AppCompatActivity {
         return size.x;
     }
 
-//    public void createBalls() {
-//        int ball_size = 120;
-//        balls= new ImageView[6];
-//        float curX=(((getScreenWidth()/3)/2)-(ball_size/2));
-//        for(int i=0; i<balls.length; i++){
-//            balls[i]= new ImageView(this);
-//            balls[i].setImageResource(R.drawable.yellowball);
-//            balls[i].setLayoutParams(new android.view.ViewGroup.LayoutParams(ball_size, ball_size));
-//            balls[i].setY(rand.nextInt(BOUND) - NUM);
-//            //      balls[i].setY(locationY.get(rand.nextInt(locationY.size())));
-//            balls[i].setX(curX);
-//            layout.addView(balls[i]);
-//            curX=curX+(getScreenWidth()/3);
-//            if(i%3==0) {
-//                curX=(((getScreenWidth()/3)/2)-(ball_size/2));
-//            }
-//        }
-//    }
-
-
-
-//        public void createBalls () {
-//            balls = new ImageView[5];
-//            for (int i = 0; i < balls.length; i++) {
-//                balls[i] = new ImageView(this);
-//                balls[i].setImageResource(R.drawable.ballforgame);
-//                int BALL_SIZE = 120;
-//                balls[i].setLayoutParams(new android.view.ViewGroup.LayoutParams(BALL_SIZE, BALL_SIZE));
-//                balls[i].setY(rand.nextInt(BOUND) - NUM);
-//                layoutBalls.setOrientation(GridLayout.HORIZONTAL);
-//                layoutBalls.setColumnCount(3);
-//                layoutBalls.addView(balls[i]);
-//            }
-//        }
+    public void createBalls() {
+        int ball_size = getScreenWidth()/9;
+        balls= new ImageView[6];
+        float curX=(((getScreenWidth()/3)/2)-(ball_size/2));
+        for(int i=0; i<balls.length; i++){
+            balls[i]= new ImageView(this);
+            balls[i].setImageResource(R.drawable.yellowball);
+            balls[i].setLayoutParams(new android.view.ViewGroup.LayoutParams(ball_size, ball_size));
+            balls[i].setY(rand.nextInt(BOUND) - NUM);
+            balls[i].setX(curX);
+            layout.addView(balls[i]);
+            curX=curX+(getScreenWidth()/3);
+            if(i%3==0) {
+                curX=(((getScreenWidth()/3)/2)-(ball_size/2));
+            }
+        }
+    }
 
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
