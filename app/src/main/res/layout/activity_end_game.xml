@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@drawable/graywall"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/game_over_txt"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/gameover"></ImageView>
+
+    <TextView
+        android:id="@+id/game_over"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text=" "
+        android:layout_below="@+id/game_over_txt"
+        android:fontFamily="sans-serif-black"
+        android:textSize="37dp"
+        android:textColor="@android:color/holo_red_dark"/>
+
+    <ImageView
+        android:id="@+id/play_again"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="90dp"
+        android:src="@drawable/playtransparent"></ImageView>
+
+    <ImageView
+        android:id="@+id/evil_actor"
+        android:layout_width="270dp"
+        android:layout_height="270dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="-50dp"
+        android:layout_marginBottom="-20dp"
+        android:src="@drawable/actorr"></ImageView>
+
+
+    <!--    <Button-->
+    <!--        android:id="@+id/start_game_btn"-->
+    <!--        android:layout_width="236dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_alignParentBottom="true"-->
+    <!--        android:layout_centerHorizontal="true"-->
+    <!--        android:layout_marginBottom="60dp"-->
+    <!--        android:background="@drawable/buttonshape"-->
+    <!--        android:shadowColor="#A8A8A8"-->
+    <!--        android:text="PLAY AGAIN"-->
+    <!--        android:textColor="#FFFFFFFF"-->
+    <!--        android:textSize="20sp" />-->
+
+
+
+</RelativeLayout>
