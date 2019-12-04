@@ -150,7 +150,7 @@ public class TheGame extends AppCompatActivity {
 
     public void createBalls() {
         int ball_size = getScreenWidth()/9;
-        balls= new ImageView[6];
+        balls= new ImageView[7];
         float curX=(((getScreenWidth()/3)/2)-(ball_size/2));
         for(int i=0; i<balls.length; i++){
             balls[i]= new ImageView(this);

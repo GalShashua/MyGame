@@ -30,5 +30,10 @@ public class EndGame extends AppCompatActivity {
         Intent intent = new Intent(this, TheGame.class);
         startActivity(intent);
     }
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, TheGame.class);
+        startActivity(intent);
+    }
 
 }
